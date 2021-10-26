@@ -14,7 +14,9 @@ orders as (
 
 ),
 
-
+payment as (
+    select * from {{ref('payment')}}
+)
 
 
 with customers as (
