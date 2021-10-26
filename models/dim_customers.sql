@@ -4,6 +4,21 @@
 
 with customers as (
 
+    select * from {{ ref('stg_customers')}}
+
+),
+
+orders as (
+
+    select * from {{ ref('stg_orders') }}
+
+),
+
+
+
+
+with customers as (
+
     select
         id as customer_id,
         first_name,
@@ -13,17 +28,7 @@ with customers as (
 
 ),
 
-orders as (
 
-    select
-        id as order_id,
-        user_id as customer_id,
-        order_date,
-        status
-
-    from DEMO_DB.jaffle_shop.orders
-
-),
 
 
 
